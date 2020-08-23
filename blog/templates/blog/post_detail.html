@@ -1,0 +1,350 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" media="screen" href="{% static 'blog/main10.css' %}" />
+  <link rel="icon" type="image/png" href="{% static 'img/favicon-16x16.png' %}" sizes="16x16" />
+  
+  <title>{{ object.title }}</title>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151309008-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-151309008-1');
+</script>
+
+<!-- Google tracker ends here  -->
+</head>
+
+<body>
+  <div class="top">
+    <div class="uppermenu">
+      <ul>
+        <li><a href="{% url 'blog-home' %}">Home</a></li>
+        <li><a href="{% url 'blog-business' %}">Business</a></li>
+        <li><a href="{% url 'blog-politics' %}">Politics</a></li>
+        <li><a href="{% url 'blog-science' %}">Science</a></li>
+        <li><a href="{% url 'blog-restate' %}">Real Estate</a></li>
+        <li><a href="{% url 'blog-sstory' %}">Short Story</a></li>
+        <li><a href="{% url 'blog-travel' %}">Travel</a></li>
+        <li><a href="{% url 'blog-sports' %}">Sports</a></li>
+        <li><a href="{% url 'blog-technology' %}">Technology</a></li>
+        <li><a href="{% url 'blog-education' %}">Education</a></li>
+        <li><a href="{% url 'blog-health' %}">Health</a></li>
+        <li><a href="{% url 'blog-entertainment' %}">Entertainment</a></li>
+        <li><a href="{% url 'blog-art' %}">Art</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- site banner, visble on mobile -->
+  <div class="banner">
+    <a href="{% url 'blog-home' %}"><img src="{% static 'img/banner7.jpg' %}" alt="banner"></a>
+  </div>
+  
+  
+  
+  
+  
+  <!-- Post detail starts here -->
+  
+  <div class="story-header">
+    <div class="top-story-header">
+      <h1>{{ object.title }}</h1>
+    </div>
+    <div class="story-banner">
+      <div class="ms-image">
+        {% if object.image %}
+        <img src="{{ object.image.url }}" alt="Loading Image">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  
+  <div class="story">
+    <div></div>
+    <div class="postcontent">
+      {% if object.writer %}
+      <p>By <strong>{{ object.writer }}</strong></p>
+      {% endif %}
+      <p>{{ object.date_posted }}</p>
+    </div>
+    <div></div>
+  </div>
+  
+  <div class="story">
+    <div></div>
+    <div class="postcontent">
+      <p><strong>{{ object.summary }}</strong></p>
+      <p>{{ object.content }}</p>
+      {% if object.paragraph1 %}
+      <p>{{ object.paragraph1 }}</p>
+      {% endif %}
+      {% if object.paragraph2 %}
+      <p>{{ object.paragraph2 }}</p>
+      {% endif %}
+      {% if object.paragraph3 %}
+      <p>{{ object.paragraph3 }}</p>
+      {% endif %}
+    </div>
+    <div></div>
+  </div>
+  
+  <div class="story-banner">
+    <div class="ms-image">
+      {% if object.image2 %}
+      <img src="{{ object.image2.url }}" alt="Loading Image">
+      {% endif %}
+    </div>
+  </div>
+  
+  <div class="story">
+    <div></div>
+    <div class="postcontent">
+      {% if object.subheading1 %}
+      <p><strong>{{ object.subheading1 }}</strong></p>
+      {% endif %}
+      {% if object.paragraph4 %}
+      <p>{{ object.paragraph4 }}</p>
+      {% endif %}
+      {% if object.paragraph5 %}
+      <p>{{ object.paragraph5 }}</p>
+      {% endif %}
+      {% if object.paragraph6 %}
+      <p>{{ object.paragraph6 }}</p>
+      {% endif %}
+    </div>
+    <div></div>
+  </div>
+  
+  
+  <div class="story-banner">
+    <div class="ms-image">
+      {% if object.image3 %}
+      <img src="{{ object.image3.url }}" alt="Loading Image">
+      {% endif %}
+    </div>
+  </div>
+  
+  
+  <div class="story">
+    <div></div>
+    <div class="postcontent">
+      {% if object.subheading2 %}
+      <p><strong>{{ object.subheading2 }}</strong></p>
+      {% endif %}
+      {% if object.paragraph7 %}
+      <p>{{ object.paragraph7 }}</p>
+      {% endif %}
+      {% if object.paragraph8 %}
+      <p>{{ object.paragraph8 }}</p>
+      {% endif %}
+      {% if object.paragraph9 %}
+      <p>{{ object.paragraph9 }}</p>
+      {% endif %}
+    </div>
+    <div></div>
+  </div>
+  
+  
+  
+  <div class="story">
+    <div></div>
+    <div class="postcontent">
+      {% if object.subheading3 %}
+      <p><strong>{{ object.subheading3 }}</strong></p>
+      {% endif %}
+      {% if object.paragraph10 %}
+      <p>{{ object.paragraph10 }}</p>
+      {% endif %}
+      {% if object.paragraph11 %}
+      <p>{{ object.paragraph11 }}</p>
+      {% endif %}
+      {% if object.paragraph12 %}
+      <p>{{ object.paragraph12 }}</p>
+      {% endif %}
+      {% if object.paragraph13 %}
+      <p>{{ object.paragraph13 }}</p>
+      {% endif %}
+    </div>
+    <div></div>
+  </div>
+  
+  <div class="story-banner">
+    <div class="ms-image">
+      {% if object.image4 %}
+      <img src="{{ object.image4.url }}" alt="Loading Image">
+      {% endif %}
+    </div>
+  </div>
+  
+  
+  <div class="story">
+    <div></div>
+    <div class="postcontent">
+      {% if object.subheading4 %}
+      <p><strong>{{ object.subheading4 }}</strong></p>
+      {% endif %}
+      {% if object.paragraph14 %}
+      <p>{{ object.paragraph14 }}</p>
+      {% endif %}
+      {% if object.paragraph15 %}
+      <p>{{ object.paragraph15 }}</p>
+      {% endif %}
+      {% if object.paragraph16 %}
+      <p>{{ object.paragraph16 }}</p>
+      {% endif %}
+      {% if object.paragraph17 %}
+      <p>{{ object.paragraph17 }}</p>
+      {% endif %}
+    </div>
+    <div></div>
+  </div>
+  
+  <div class="story">
+    <div></div>
+    <div class="postcontent">
+      {% if object.subheading5 %}
+      <p><strong>{{ object.subheading5 }}</strong></p>
+      {% endif %}
+      {% if object.paragraph18 %}
+      <p>{{ object.paragraph18 }}</p>
+      {% endif %}
+      {% if object.paragraph19 %}
+      <p>{{ object.paragraph19 }}</p>
+      {% endif %}
+      {% if object.paragraph20 %}
+      <p>{{ object.paragraph20 }}</p>
+      {% endif %}
+    </div>
+    <div></div>
+  </div>
+  
+  <!--
+    <h1>{{ object.title }}</h1>
+    <p>By {{ object.author }} on {{ object.date_posted }}</p>
+    <p>{{ object.content }}</p>
+  -->
+  {% if object.author == user %}
+  <div class="story">
+    <div></div>
+    <div class="postcontent">
+      <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
+      <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
+    </div>
+    <div></div>
+  </div>
+  {% endif %}
+
+
+
+
+   <!-- Footer starts here -->
+  <div class="footer">
+    <div class="mobile-footer">          
+        <div class="mf-list">
+            <a href="{% url 'blog-home' %}">Home</a>
+        </div>
+        <div class="mf-list">
+            <a href="{% url 'blog-business' %}">Business</a>
+        </div>
+        <div class="mf-list">
+            <a href="{% url 'blog-politics' %}">Politics</a>
+        </div>
+        <div class="mf-list">
+            <a href="{% url 'blog-sports' %}">Sports</a>
+        </div>
+        <div class="mf-list">
+            <a href="{% url 'blog-contact' %}">Contact Us</a>
+        </div>
+        <div class="mf-list">
+            <a href="{% url 'blog-about' %}">About Us</a>
+        </div>
+    </div>
+    <div class="links">
+        <div class="flist">
+            <ul>
+                <li><a href="{% url 'blog-business' %}">Business</a></li>
+                <li><a href="{% url 'blog-politics' %}">Politics</a></li>
+                <li><a href="{% url 'blog-science' %}">Science</a></li>
+                <li><a href="{% url 'blog-restate' %}">Real Estate</a></li>
+                <li><a href="{% url 'blog-education' %}">Education</a></li>
+                <li><a href="{% url 'blog-art' %}">Art</a></li>
+            </ul>
+        </div>
+        <div class="flist">
+            <ul>
+                <li><a href="{% url 'blog-sports' %}">Sports</a></li>
+                <li><a href="{% url 'blog-travel' %}">Travel</a></li>
+                <li><a href="{% url 'blog-sstory' %}">Short Story</a></li>
+                <!--    <li><a href="#home">Entertainment</a></li>
+                    <li><a href="#home">Item Six</a></li> -->
+                    <!--<li><a href="#home">Item Seven</a></li> -->
+                </ul>
+                <!-- second side post  -->
+            </div>
+            <div class="flist">
+                <ul>
+                    <li><a href="{% url 'blog-technology' %}">Technology</a></li>
+                    <li><a href="{% url 'blog-health' %}">Health</a></li>
+                    <li><a href="{% url 'blog-education' %}">Education</a></li>
+                    <!--     <li><a href="#home">Item Four</a></li>
+                        <li><a href="#home">Item Five</a></li>
+                        <li><a href="#home">Item Six</a></li>
+                        <li><a href="#home">Item Seven</a></li> -->
+                    </ul>
+                </div>
+                <div class="flist">
+                    <ul>
+                        <li><a href="{% url 'blog-about' %}">About Us</a></li>
+                        <li><a href="{% url 'blog-contact' %}">Contact Us</a></li>
+                        <li><a href="{% url 'login' %}">Staff Login</a></li>
+                        <!--   <li><a href="#home">Item Four</a></li>
+                            <li><a href="#home">Item Five</a></li>
+                            <li><a href="#home">Item Six</a></li>
+                            <li><a href="#home">Item Seven</a></li>  -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="corpinfo">
+                    <h5>© 2019 The East African Journal</h5>
+                </div>
+            </div>
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        </body>
+        </html>
+         
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

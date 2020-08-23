@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'blog/main10.css' %}" />
+    <link rel="icon" type="image/png" href="{% static 'img/favicon-16x16.png' %}" sizes="16x16" />
+    {% if title %}
+    <title>East African Journal - {{ title }}</title>
+    {% else %}
+    <title>East African Journal</title>
+    {% endif %}
+
+<!-- Google analytics tracker starts here -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151309008-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-151309008-1');
+</script>
+<!-- Google analytics tracker ends here -->
+</head>
+<body>
+    <div class="top">
+        <div class="uppermenu">
+            <ul>
+                <li><a href="{% url 'blog-home' %}">Home</a></li>
+                <li><a href="{% url 'blog-business' %}">Business</a></li>
+                <li><a href="{% url 'blog-politics' %}">Politics</a></li>
+                <li><a href="{% url 'blog-science' %}">Science</a></li>
+                <li><a href="{% url 'blog-restate' %}">Real Estate</a></li>
+                <li><a href="{% url 'blog-sstory' %}">Short Story</a></li>
+                <li><a href="{% url 'blog-travel' %}">Travel</a></li>
+                <li><a href="{% url 'blog-sports' %}">Sports</a></li>
+                <li><a href="{% url 'blog-technology' %}">Technology</a></li>
+                <li><a href="{% url 'blog-education' %}">Education</a></li>
+                <li><a href="{% url 'blog-health' %}">Health</a></li>
+                <li><a href="{% url 'blog-entertainment' %}">Entertainment</a></li>
+                <li><a href="{% url 'blog-art' %}">Art</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- site banner, visble on mobile -->
+    <div class="banner">
+        <a href="{% url 'blog-home' %}"><img src="{% static 'img/banner7.jpg' %}" alt="banner"></a>
+    </div>
+    <!-- main story sections, to be customized for mobile screens -->
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% block content %}{% endblock %}
+    <div class="footer">
+        <div class="mobile-footer">          
+            <div class="mf-list">
+                <a href="{% url 'blog-home' %}">Home</a>
+            </div>
+            <div class="mf-list">
+                <a href="{% url 'blog-business' %}">Business</a>
+            </div>
+            <div class="mf-list">
+                <a href="{% url 'blog-politics' %}">Politics</a>
+            </div>
+            <div class="mf-list">
+                <a href="{% url 'blog-sports' %}">Sports</a>
+            </div>
+            <div class="mf-list">
+                <a href="{% url 'blog-contact' %}">Contact Us</a>
+            </div>
+            <div class="mf-list">
+                <a href="{% url 'blog-about' %}">About Us</a>
+            </div>
+        </div>
+        <div class="links">
+            <div class="flist">
+                <ul>
+                    <li><a href="{% url 'blog-business' %}">Business</a></li>
+                    <li><a href="{% url 'blog-politics' %}">Politics</a></li>
+                    <li><a href="{% url 'blog-science' %}">Science</a></li>
+                    <li><a href="{% url 'blog-restate' %}">Real Estate</a></li>
+                    <li><a href="{% url 'blog-education' %}">Education</a></li>
+                    <li><a href="{% url 'blog-art' %}">Art</a></li>
+                </ul>
+            </div>
+            <div class="flist">
+                <ul>
+                    <li><a href="{% url 'blog-sports' %}">Sports</a></li>
+                    <li><a href="{% url 'blog-travel' %}">Travel</a></li>
+                    <li><a href="{% url 'blog-sstory' %}">Short Story</a></li>
+                    <!--    <li><a href="#home">Entertainment</a></li>
+                        <li><a href="#home">Item Six</a></li> -->
+                        <!--<li><a href="#home">Item Seven</a></li> -->
+                    </ul>
+                    <!-- second side post  -->
+                </div>
+                <div class="flist">
+                    <ul>
+                        <li><a href="{% url 'blog-technology' %}">Technology</a></li>
+                        <li><a href="{% url 'blog-health' %}">Health</a></li>
+                        <li><a href="{% url 'blog-education' %}">Education</a></li>
+                        <!--     <li><a href="#home">Item Four</a></li>
+                            <li><a href="#home">Item Five</a></li>
+                            <li><a href="#home">Item Six</a></li>
+                            <li><a href="#home">Item Seven</a></li> -->
+                        </ul>
+                    </div>
+                    <div class="flist">
+                        <ul>
+                            <li><a href="{% url 'blog-about' %}">About Us</a></li>
+                            <li><a href="{% url 'blog-contact' %}">Contact Us</a></li>
+                            <li><a href="{% url 'login' %}">Staff Login</a></li>
+                            <!--   <li><a href="#home">Item Four</a></li>
+                                <li><a href="#home">Item Five</a></li>
+                                <li><a href="#home">Item Six</a></li>
+                                <li><a href="#home">Item Seven</a></li>  -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="corpinfo">
+                        <h5>© 2019 The East African Journal</h5>
+                    </div>
+                </div>
+                <!-- Optional JavaScript -->
+                <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            </body>
+            </html>
+            

@@ -1,0 +1,38 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<div class="story-header">
+    <div class=admin-id>
+        <h5><a href="#">Username</a></h5>
+        <h5><a href="{% url 'logout' %}">Logout</a></h5>
+    </div>
+</div>
+
+<div class="admin-profile">
+    <div>         
+        <div class="mf-list2">
+            <a href="{% url 'post-create' %}">New Main Post</a>
+        </div>
+        <div class="mf-list2">
+            <a href="{% url 'register' %}">Create New User Profile</a>
+        </div>
+        <div class="mf-list2">
+            <a href="{% url 'profile' %}">Update Profile</a>
+        </div>
+        <div class="mf-list2">
+            <a href="#">Manage Users</a>
+        </div>
+    </div>
+    <div class="user-only">
+        <div class="user-posts">
+            <div class="shortimage2">
+                <a href="#"><img src="" alt="Loading Image"></a>
+            </div>
+            <div class="sidepost2">
+                <a href="#"><h4></h4></a>
+                <a href="#"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, corporis recusandae. Eligendi nemo officia porro?</p></a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>       
+{% endblock content %}

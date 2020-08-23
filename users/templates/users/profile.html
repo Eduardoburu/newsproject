@@ -1,0 +1,33 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h1>{{ user.username }}</h1>
+<P>{{ user.email }}</P>
+<img src="{{ user.profile.image.url }}">
+<div class="story-header">
+    <div class=admin-id>
+        <h5><a href="#">Admin</a></h5>
+        <h5><a href="#">Logout</a></h5>
+    </div>
+    <div class="admin-id2">
+        <h3>Update Profile</h3>
+    </div>
+</div>
+<div class="story">
+    <div></div>
+    <div>
+        <div class="form-area">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ u_form|crispy }}
+                {{ p_form|crispy }}
+                
+                <div class="row">
+                    <input type="submit" value="Update">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div></div>  
+</div>
+{% endblock content %}

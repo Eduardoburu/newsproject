@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="story-header">
+    <div class=admin-id>
+        <h5><a href="#">Admin</a></h5>
+        <h5><a href="#">Logout</a></h5>
+    </div>
+    <div class="admin-id2">
+        <h3>Create New Post</h3>
+    </div>
+</div>
+<div class="story">
+    <div></div>
+    <div>
+        <div class="form-area">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form|crispy }}
+                
+                <div class="row">
+                    <input type="submit" value="Post">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div></div>  
+</div>
+{% endblock content %}
